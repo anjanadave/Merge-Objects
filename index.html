@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Objects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="section">
+            <h1>Merge Objects</h1>
+            <label for="year">Object 1:</label><br>
+            <textarea name="" id="object1" cols="46" rows="4"></textarea>
+            <label for="year">Object 2:</label><br>
+            <textarea name="" id="object2" cols="46" rows="4"></textarea>
+            <button type="button" onclick="mergeObjects()">Merge Objects</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+     function mergeObjects(){
+        var object1 = JSON.parse(document.getElementById('object1').value);
+        var object2 = JSON.parse(document.getElementById('object2').value);
+        
+        var mergedObjet = { ...object1, ...object2 };
+
+        document.getElementById('result').innerHTML = 'Merged Object: ' + JSON.stringify(mergedObjet);
+     }
+    </script>
+</body>
+ 
+</html>
